@@ -7,10 +7,12 @@ import { MaterialModule } from 'src/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { ToastrModule } from 'ngx-toastr';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
