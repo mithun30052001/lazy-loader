@@ -24,4 +24,12 @@ export class AuthService {
   Updateuser(code:any,inputdata:any){
     return this.http.put(this.apiurl+'/'+code,inputdata); //update the credentials of a user in api endpoint
   }
+
+  IsloggedIn(){
+    return sessionStorage.getItem('username') != null;
+  }
+
+  GetUserrole(){
+    return sessionStorage.getItem('userrole') != null? sessionStorage.getItem('userrole')?.toString() : '';
+  }
 }
