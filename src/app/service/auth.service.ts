@@ -8,6 +8,7 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
   apiurl = 'http://localhost:3000/user'
+  roleurl = 'http://localhost:3000/role'
 
   GetAll(){
      return this.http.get(this.apiurl); //gets all users
@@ -15,6 +16,10 @@ export class AuthService {
 
   Getbycode(code:any){
     return this.http.get(this.apiurl+'/'+code); //gets a particular user by code
+  }
+  
+  GetAllRole(){
+    return this.http.get(this.roleurl); //gets all users
   }
 
   Proceedregister(inputdata:any){
