@@ -1,5 +1,50 @@
 {
   "user": [
-    
+    {
+      "id": "Admin",
+      "name": "Admin User",
+      "password": "Test@123",
+      "email": "admin@example.com",
+      "gender": "male",
+      "role": "admin",
+      "isactive": true
+    },
+    {
+      "id": "Test1",
+      "name": "User1",
+      "password": "User1@123",
+      "email": "user1@example.com",
+      "gender": "male",
+      "role": "user",
+      "isactive": true
+    },
+    {
+      "id": "Test2",
+      "name": "User2",
+      "password": "User2@123",
+      "email": "user2@example.com",
+      "gender": "male",
+      "role": "user",
+      "isactive": true
+    },
+    {
+      "id": "Test3",
+      "name": "User3",
+      "password": "User3@123",
+      "email": "user3@example.com",
+      "gender": "male",
+      "role": "user",
+      "isactive": true
+    }
+  ],
+  "role": [
+    {
+      "code": "admin",
+      "name": "Admin"
+    },
+    {
+      "code": "user",
+      "name": "User"
+    }
   ]
 }
