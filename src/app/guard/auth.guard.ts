@@ -7,9 +7,27 @@ export function authGuard(): CanActivateFn  {
   return() => {
   const service:AuthService = inject(AuthService);
   const router:Router = inject(Router);
-
+  const toastr:ToastrService = inject(ToastrService);
+  
   if(service.IsloggedIn()){
-    return true;
+    if(router.url.length > 0){
+      let isUserMenu = window.location.href.includes('/user');
+      if(isUserMenu){
+        if(service.GetUserrole() == 'admin'){
+          return true;
+        }
+        else {
+          toastr.warning('You dont have access to this page');
+          return false;
+        }
+      } 
+      else{
+        return true;
+      }
+    }
+    else{
+      return true;
+    }
   }
   else{
     router.navigate(['login']);
