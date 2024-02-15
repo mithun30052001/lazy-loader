@@ -1,0 +1,12 @@
+<div class="profile-container">
+    <h2>Profile</h2>
+    <div class="profile-info">
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Gender:</strong> {{ user.gender }}</p>
+      <p><strong>Role:</strong> {{ user.role }}</p>
+      <p><strong>Active:</strong> {{ user.isactive ? 'Yes' : 'No' }}</p>
+    </div>
+    <button (click)="changePassword()">Change Password</button>
+</div>
+  
