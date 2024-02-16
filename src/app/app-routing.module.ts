@@ -5,12 +5,16 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { authGuard } from './guard/auth.guard';
 import { UserlistingComponent } from './userlisting/userlisting.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent,canActivate: [authGuard()]},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  {path:'user',component:UserlistingComponent,canActivate: [authGuard()]}
+  {path:'user',component:UserlistingComponent,canActivate: [authGuard()]},
+  {path:'profile',component:ProfileComponent},
+  {path:'change-password', component:ChangePasswordComponent}
 ];
 
 @NgModule({
