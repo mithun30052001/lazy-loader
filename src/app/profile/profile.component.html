@@ -22,26 +22,20 @@
       <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
         <div><strong>Gender:</strong></div>
         <mat-form-field appearance="fill">
-          <input matInput formControlName="gender"  [readonly]="!editing"/>
+          <mat-select formControlName="gender">
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+        </mat-select>
           <mat-error *ngIf="profileForm.get('gender')?.invalid && profileForm.get('gender')?.touched">Invalid Gender</mat-error>
         </mat-form-field>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
-        <div><strong>Role:</strong></div>
-        <mat-form-field appearance="fill">
-          <input matInput formControlName="role"  [readonly]="!editing"/>
-          <mat-error *ngIf="profileForm.get('role')?.invalid && profileForm.get('role')?.touched">Invalid Role</mat-error>
-        </mat-form-field>
-      </div>
-
-      <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
         <div><strong>IsActive:</strong></div>
-        <mat-form-field appearance="fill">
-          <input matInput formControlName="isactive"  [readonly]="!editing"/>
-          <mat-error *ngIf="profileForm.get('isactive')?.invalid && profileForm.get('isactive')?.touched">Select the status</mat-error>
-        </mat-form-field>
+        <mat-checkbox formControlName="isactive" [disabled]="!editing">Is Active</mat-checkbox>
+        <mat-error *ngIf="profileForm.get('isactive')?.invalid && profileForm.get('isactive')?.touched">Select the status</mat-error>
       </div>
+   
     </div>
 
     <div fxLayout="row" fxLayoutAlign="start center">

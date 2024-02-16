@@ -22,20 +22,20 @@ export class ProfileComponent {
       this.setCurrentUser(data);
     });
     this.profileForm = this.builder.group({
-      username: [''],
+      id: ['',Validators.required],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.email]],
       gender: ['', Validators.required],
       role: ['', Validators.required],
-      isactive: ['']
+      isactive: [''],
     });
   }
 
   setCurrentUser(profile: any){
       this.user = profile;
       this.profileForm.patchValue({
-        username: this.user.id,
+        id: this.user.id,
         name: this.user.name,
         email: this.user.email,
         password: this.user.password,
@@ -56,11 +56,12 @@ export class ProfileComponent {
   }
   
   updateProfile() {
+    console.log("Profile Form",this.profileForm.value);
     if (this.profileForm.valid) {
       this.user = { ...this.profileForm.value };
       this.editing = false;
       this.profileForm.disable(); 
-      this.service.Updateregister(this.profileForm.value.username,this.profileForm.value).subscribe(res=>{
+      this.service.Updateregister(this.user.id,this.profileForm.value).subscribe(res=>{
         this.toastr.success('Your profile has been successfully updated');
       });
     } else {
