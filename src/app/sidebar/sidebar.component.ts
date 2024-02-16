@@ -11,6 +11,7 @@ export class SidebarComponent implements DoCheck {
   title = 'angular-dashboard';
   isnavmenurequired = true;
   isadminuser = false;
+  isloggedin = false;
 
   constructor(private router: Router, private service: AuthService) {}
 
@@ -21,8 +22,7 @@ export class SidebarComponent implements DoCheck {
     } else {
       this.isnavmenurequired = true;
     }
-
-    // Update isadminuser based on user role
+    this.isloggedin = this.service.IsloggedIn();
     this.isadminuser = this.service.GetUserrole()==='admin';
   }
 }

@@ -1,15 +1,4 @@
-<!-- sidebar.component.html -->
-<div class="sidebar" style="width: 250px; height: 100%; background-color: #333; color: white; float: left;">
-  <div class="sidebar-item">
-    <a routerLink="/profile">
-      <img
-        style="border-radius: 50%;"
-        width="40"
-        alt="Angular Logo"
-        src="./assets/profile-image.webp"
-      />
-    </a>
-  </div>
+<div *ngIf="isloggedin" class="sidebar" style="width: 250px; height: 100%; background-color: #333; color: white; float: left; margin-top: 60px">
   <div class="sidebar-item">
     <a style="color:white; padding-left: 10px" routerLink="/"> Home</a>
   </div>

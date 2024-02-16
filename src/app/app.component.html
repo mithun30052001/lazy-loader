@@ -1,8 +1,8 @@
-<!-- app.component.html -->
 <app-sidebar></app-sidebar>
 
-<div class="content" style="width: calc(100% - 250px); display: block; float: right;" role="main">
+<div class="content-wrapper" style="display: flex; justify-content: flex-end;" role="main">
   <div class="toolbar" *ngIf="isnavmenurequired" role="banner">
+    <div style="margin-left: auto;">
     <a routerLink="/profile">
       <img
         style="border-radius: 50%;"
@@ -11,10 +11,7 @@
         src="./assets/profile-image.webp"
       />
     </a>
-    <!-- <a style="color:white; padding-left: 10px" routerLink="/"> Home</a>
-    <a *ngIf="isadminuser" style="color:white; padding-left: 10px" routerLink="/user"> User</a>
-    <div class="spacer"></div>
-    <a style="color:white;" routerLink="/login">Logout</a> -->
+  </div>
   </div>
 
   <div class="content" style="width: 100%; display: block;" role="main">
