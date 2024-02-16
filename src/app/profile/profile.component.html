@@ -1,12 +1,58 @@
 <div class="profile-container">
-    <h2>Profile</h2>
-    <div class="profile-info">
-      <p><strong>Name:</strong> {{ user.name }}</p>
-      <p><strong>Email:</strong> {{ user.email }}</p>
-      <p><strong>Gender:</strong> {{ user.gender }}</p>
-      <p><strong>Role:</strong> {{ user.role }}</p>
-      <p><strong>Active:</strong> {{ user.isactive ? 'Yes' : 'No' }}</p>
+  <h2>Profile</h2>
+  <form [formGroup]="profileForm" fxLayout="column">
+    <div class="profile-info" fxLayout="row wrap" fxLayoutGap="20px">
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
+        <div><strong>Name:</strong></div>
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="name" [readonly]="!editing" />
+          <mat-error *ngIf="profileForm.get('name')?.invalid && profileForm.get('name')?.touched">Name is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
+        <div><strong>Email:</strong></div>
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="email"  [readonly]="!editing"/>
+          <mat-error *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">Invalid email</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
+        <div><strong>Gender:</strong></div>
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="gender"  [readonly]="!editing"/>
+          <mat-error *ngIf="profileForm.get('gender')?.invalid && profileForm.get('gender')?.touched">Invalid Gender</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
+        <div><strong>Role:</strong></div>
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="role"  [readonly]="!editing"/>
+          <mat-error *ngIf="profileForm.get('role')?.invalid && profileForm.get('role')?.touched">Invalid Role</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
+        <div><strong>IsActive:</strong></div>
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="isactive"  [readonly]="!editing"/>
+          <mat-error *ngIf="profileForm.get('isactive')?.invalid && profileForm.get('isactive')?.touched">Select the status</mat-error>
+        </mat-form-field>
+      </div>
     </div>
-    <button (click)="changePassword()">Change Password</button>
+
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div *ngIf="!editing" >
+        <button mat-raised-button color="primary" (click)="editProfile()">Edit</button>
+        <button style="margin-left: 10px;" mat-raised-button color="primary" (click)="changePassword()">Change Password</button>
+      </div>
+      <div *ngIf="editing">
+        <button mat-raised-button color="primary" (click)="updateProfile()">Update</button>
+        <button style="margin-left: 10px;" mat-raised-button color="primary" (click)="changePassword()">Change Password</button>
+      </div>
+    </div> 
+  </form>
 </div>
-  
