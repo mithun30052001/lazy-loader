@@ -1,13 +1,14 @@
 {
   "user": [
     {
-      "id": "Admin",
+      "username": "Admin",
       "name": "Admin User",
-      "password": "Test@123",
       "email": "admin@example.com",
+      "password": "Admin@123",
       "gender": "male",
       "role": "admin",
-      "isactive": true
+      "isactive": true,
+      "id": "Admin"
     },
     {
       "id": "Test1",
