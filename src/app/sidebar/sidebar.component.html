@@ -1,0 +1,22 @@
+<!-- sidebar.component.html -->
+<div class="sidebar" style="width: 250px; height: 100%; background-color: #333; color: white; float: left;">
+  <div class="sidebar-item">
+    <a routerLink="/profile">
+      <img
+        style="border-radius: 50%;"
+        width="40"
+        alt="Angular Logo"
+        src="./assets/profile-image.webp"
+      />
+    </a>
+  </div>
+  <div class="sidebar-item">
+    <a style="color:white; padding-left: 10px" routerLink="/"> Home</a>
+  </div>
+  <div class="sidebar-item" *ngIf="isadminuser">
+    <a style="color:white; padding-left: 10px" routerLink="/user"> User</a>
+  </div>
+  <div class="sidebar-item">
+    <a style="color:white;" routerLink="/login">Logout</a>
+  </div>
+</div>

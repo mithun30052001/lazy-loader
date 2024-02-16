@@ -15,6 +15,7 @@ import { UserlistingComponent } from './userlisting/userlisting.component';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     UserlistingComponent,
     UpdatepopupComponent,
     ProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
