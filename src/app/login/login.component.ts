@@ -22,23 +22,43 @@ export class LoginComponent {
     password: this.builder.control('',Validators.required)
   });
 
-  proceedlogin(){
-    if(this.loginform.valid){
-      this.service.Getbycode(this.loginform.value.username).subscribe(res=>{
-          this.userdata = res;
-          console.log(this.userdata);
-          if(this.userdata.password == this.loginform.value.password){
-             if(this.userdata.isactive){
-                sessionStorage.setItem('username',this.userdata.id);
-                sessionStorage.setItem('userrole',this.userdata.role);
-                this.router.navigate(['']);
-             } else {
-                this.toastr.error('Please contact admin', 'In Active User');
-             }
-          } else {
-            this.toastr.error("Invalid Login Credentials");
-          }
-      });
+  checkCredentials(userdata: any){
+    if (this.userdata.password == this.loginform.value.password) {
+      if (this.userdata.isactive) {
+        sessionStorage.setItem('username', this.userdata.id);
+        sessionStorage.setItem('userrole', this.userdata.role);
+        this.router.navigate(['']);
+      } else {
+        this.toastr.error('Please contact admin', 'In Active User');
+      }
+    } else {
+      this.toastr.error("Invalid Login Credentials");
     }
   }
+
+  proceedlogin(){
+      if (this.loginform.valid) {
+        this.service.Getbycode(this.loginform.value.username).subscribe(
+          (res) => {
+            this.userdata = res;
+            this.checkCredentials(this.userdata);
+            console.log(this.userdata);
+          },
+          (error) => {
+            this.service.GetByEmail(this.loginform.value.username).subscribe(
+              (res) => {
+                this.userdata = res[0];
+                if(this.userdata){this.checkCredentials(this.userdata);}
+                else{ this.toastr.error("Enter valid user credentials");}
+                console.log(this.userdata);
+              },
+              (error) => {
+                this.toastr.error("Enter valid user credentials");
+              }
+            );
+          }
+        );
+      }
+    }
+    
 }
