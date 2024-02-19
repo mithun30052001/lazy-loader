@@ -57,4 +57,8 @@ export class AuthService {
       })
     );
   }
+
+  GetByEmail(emailId: any): Observable<any> {
+    return this.http.get(`${this.apiurl}?email=${emailId}`);
+  }
 }
