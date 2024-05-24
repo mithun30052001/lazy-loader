@@ -8,11 +8,11 @@ import { AuthService } from '../service/auth.service';
 })
 export class HomeComponent implements OnInit{
   constructor(private service:AuthService){}
-  userrole:any
+  userRole:any
 
   ngOnInit() {
-    this.userrole = this.service.GetUserrole();
-    console.log('userrole',this.userrole);
+    this.userRole = this.service.GetUserrole();
+    console.log('userrole',this.userRole);
   }
   
 }
