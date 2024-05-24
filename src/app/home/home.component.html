@@ -1,24 +1,4 @@
 <div style="text-align: center;">
     <h1>Welcome To Angular Dashboard</h1>
-    <ng-container *ngIf="userRole === 'admin'; then AdminDashboard else NonAdminDashboard"></ng-container>
-    <ng-template #AdminDashboard>
-        <h2>You are logged in as Admin</h2>
-    </ng-template>
-    <ng-template #NonAdminDashboard>
-        <ng-container *ngIf="userRole === 'candidate'">
-            <app-candidate-dashboard></app-candidate-dashboard>
-        </ng-container>
-        <ng-container *ngIf="userRole === 'vendor'">
-            <app-vendor-dashboard></app-vendor-dashboard>
-        </ng-container>
-        <ng-container *ngIf="userRole === 'employee'">
-            <app-employee-dashboard></app-employee-dashboard>
-        </ng-container>
-        <ng-container *ngIf="userRole === 'hr'">
-            <app-hr-dashboard></app-hr-dashboard>
-        </ng-container>
-        <ng-container *ngIf="userRole !== 'admin' && userRole !== 'candidate' && userRole !== 'vendor' && userRole !== 'employee' && userRole !== 'hr'">
-            <h2>You are logged in as a User</h2>
-        </ng-container>
-    </ng-template>
 </div>
+
