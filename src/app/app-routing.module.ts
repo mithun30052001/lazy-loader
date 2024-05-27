@@ -1,3 +1,4 @@
+import { MatTableDataSource } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
@@ -16,13 +17,13 @@ const routes: Routes = [
   {path:'',component:HomeComponent,canActivate: [authGuard()]},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  {path:'user',component:UserlistingComponent,canActivate: [authGuard()]},
+  {path:'user',component:UserlistingComponent,canActivate: [authGuard()], data:{role:'admin'}},
   {path:'profile',component:ProfileComponent,canActivate: [authGuard()]},
   {path:'change-password', component:ChangePasswordComponent, canActivate: [authGuard()]},
-  {path:'candidate',component:CandidateDashboardComponent,canActivate: [authGuard()]},
-  {path:'vendor',component:VendorDashboardComponent,canActivate: [authGuard()]},
-  {path:'employee',component:EmployeeDashboardComponent,canActivate: [authGuard()]},
-  {path:'hr',component:HrDashboardComponent,canActivate: [authGuard()]},
+  {path:'candidate',component:CandidateDashboardComponent,canActivate: [authGuard()],data:{role:'candidate'}},
+  {path:'vendor',component:VendorDashboardComponent,canActivate: [authGuard()],data:{role:'vendor'}},
+  {path:'employee',component:EmployeeDashboardComponent,canActivate: [authGuard()],data:{role:'employee'}},
+  {path:'hr',component:HrDashboardComponent,canActivate: [authGuard()],data:{role:'hr'}},
 ];
 
 @NgModule({
