@@ -45,29 +45,42 @@
       "gender": "female",
       "role": "hr",
       "isactive": true
+    },
+    {
+      "id": "Adminedwed",
+      "name": "R",
+      "password": "Admin@123",
+      "email": "tushar@sedintechnologies.com",
+      "gender": "male",
+      "role": "admin",
+      "isactive": true
     }
   ],
   "role": [
     {
       "code": "admin",
-      "name": "Admin"
+      "name": "Admin",
+      "id": "5ef5"
     },
     {
       "code": "candidate",
-      "name": "Candidate"
+      "name": "Candidate",
+      "id": "749a"
     },
     {
       "code": "vendor",
-      "name": "Vendor"
+      "name": "Vendor",
+      "id": "3873"
     },
     {
       "code": "employee",
-      "name": "Employee"
+      "name": "Employee",
+      "id": "9734"
     },
     {
       "code": "hr",
-      "name": "Hr"
+      "name": "Hr",
+      "id": "6c29"
     }
-
   ]
 }
