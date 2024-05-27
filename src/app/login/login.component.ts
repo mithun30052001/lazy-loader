@@ -14,7 +14,7 @@ export class LoginComponent {
     private service:AuthService,private router:Router){
       sessionStorage.clear();
     }
-  
+
   userdata: any;
 
   loginform = this.builder.group({
@@ -38,13 +38,7 @@ export class LoginComponent {
 
   proceedlogin(){
       if (this.loginform.valid) {
-        this.service.Getbycode(this.loginform.value.username).subscribe(
-          (res) => {
-            this.userdata = res;
-            this.checkCredentials(this.userdata);
-            console.log(this.userdata);
-          },
-          (error) => {
+
             this.service.GetByEmail(this.loginform.value.username).subscribe(
               (res) => {
                 this.userdata = res[0];
@@ -56,9 +50,6 @@ export class LoginComponent {
                 this.toastr.error("Enter valid user credentials");
               }
             );
-          }
-        );
       }
     }
-    
 }

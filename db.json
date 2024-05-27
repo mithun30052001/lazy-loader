@@ -11,41 +11,76 @@
       "id": "Admin"
     },
     {
-      "id": "Test1",
-      "name": "User1",
-      "password": "User1@123",
-      "email": "user1@example.com",
+      "id": "Candidate1",
+      "name": "Candidate1",
+      "password": "Candidate1@123",
+      "email": "candidate1@example.com",
       "gender": "male",
-      "role": "user",
+      "role": "candidate",
       "isactive": true
     },
     {
-      "id": "Test2",
-      "name": "User2",
-      "password": "User2@123",
-      "email": "user2@example.com",
-      "gender": "male",
-      "role": "user",
+      "id": "Vendor1",
+      "name": "Vendor1",
+      "password": "Vendor1@123",
+      "email": "vendor1@example.com",
+      "gender": "female",
+      "role": "vendor",
       "isactive": true
     },
     {
-      "id": "Test3",
-      "name": "User3",
-      "password": "User3@123",
-      "email": "user3@example.com",
+      "id": "Employee1",
+      "name": "Employee1",
+      "password": "Employee1@123",
+      "email": "employee1@example.com",
       "gender": "male",
-      "role": "user",
+      "role": "employee",
+      "isactive": true
+    },
+    {
+      "id": "Hr1",
+      "name": "Hr1",
+      "password": "Hr1@123",
+      "email": "hr1@example.com",
+      "gender": "female",
+      "role": "hr",
+      "isactive": true
+    },
+    {
+      "id": "Adminedwed",
+      "name": "R",
+      "password": "Admin@123",
+      "email": "tushar@sedintechnologies.com",
+      "gender": "male",
+      "role": "admin",
       "isactive": true
     }
   ],
   "role": [
     {
       "code": "admin",
-      "name": "Admin"
+      "name": "Admin",
+      "id": "5ef5"
     },
     {
-      "code": "user",
-      "name": "User"
+      "code": "candidate",
+      "name": "Candidate",
+      "id": "749a"
+    },
+    {
+      "code": "vendor",
+      "name": "Vendor",
+      "id": "3873"
+    },
+    {
+      "code": "employee",
+      "name": "Employee",
+      "id": "9734"
+    },
+    {
+      "code": "hr",
+      "name": "Hr",
+      "id": "6c29"
     }
   ]
 }

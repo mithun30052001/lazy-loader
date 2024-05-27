@@ -16,6 +16,10 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CandidateDashboardComponent } from './candidate-dashboard/candidate-dashboard.component';
+import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
+import { HrDashboardComponent } from './hr-dashboard/hr-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     UpdatepopupComponent,
     ProfileComponent,
     ChangePasswordComponent,
-    SidebarComponent
+    SidebarComponent,
+    CandidateDashboardComponent,
+    VendorDashboardComponent,
+    EmployeeDashboardComponent,
+    HrDashboardComponent
   ],
   imports: [
     BrowserModule,
