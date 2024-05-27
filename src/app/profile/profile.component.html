@@ -6,7 +6,7 @@
       <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
         <div><strong>Name:</strong></div>
         <mat-form-field appearance="fill">
-          <input matInput formControlName="name" [readonly]="!editing" />
+          <input matInput formControlName="name" />
           <mat-error *ngIf="profileForm.get('name')?.invalid && profileForm.get('name')?.touched">Name is required</mat-error>
         </mat-form-field>
       </div>
@@ -14,7 +14,7 @@
       <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
         <div><strong>Email:</strong></div>
         <mat-form-field appearance="fill">
-          <input matInput formControlName="email"  [readonly]="!editing"/>
+          <input matInput formControlName="email" />
           <mat-error *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">Invalid email</mat-error>
         </mat-form-field>
       </div>
@@ -25,21 +25,20 @@
           <mat-select formControlName="gender">
             <mat-option value="male">Male</mat-option>
             <mat-option value="female">Female</mat-option>
-        </mat-select>
+          </mat-select>
           <mat-error *ngIf="profileForm.get('gender')?.invalid && profileForm.get('gender')?.touched">Invalid Gender</mat-error>
         </mat-form-field>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="start center" class="profile-field">
         <div><strong>IsActive:</strong></div>
-        <mat-checkbox formControlName="isactive" [disabled]="!editing">Is Active</mat-checkbox>
+        <mat-checkbox formControlName="isactive">Is Active</mat-checkbox>
         <mat-error *ngIf="profileForm.get('isactive')?.invalid && profileForm.get('isactive')?.touched">Select the status</mat-error>
       </div>
-   
     </div>
 
     <div fxLayout="row" fxLayoutAlign="start center">
-      <div *ngIf="!editing" >
+      <div *ngIf="!editing">
         <button mat-raised-button color="primary" (click)="editProfile()">Edit</button>
         <button style="margin-left: 10px;" mat-raised-button color="primary" (click)="changePassword()">Change Password</button>
       </div>
@@ -47,6 +46,6 @@
         <button mat-raised-button color="primary" (click)="updateProfile()">Update</button>
         <button style="margin-left: 10px;" mat-raised-button color="primary" (click)="changePassword()">Change Password</button>
       </div>
-    </div> 
+    </div>
   </form>
 </div>
