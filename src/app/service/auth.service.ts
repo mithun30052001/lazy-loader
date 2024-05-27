@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, switchMap } from 'rxjs';
 
@@ -18,7 +18,7 @@ export class AuthService {
   Getbycode(code:any){
     return this.http.get(this.apiurl+'/'+code); //gets a particular user by code
   }
-  
+
   GetAllRole(){
     return this.http.get(this.roleurl); //gets all roles
   }
@@ -43,7 +43,7 @@ export class AuthService {
   GetUserrole(){
     return sessionStorage.getItem('userrole') != null? sessionStorage.getItem('userrole')?.toString() : '';
   }
-  
+
   GetCurrentUser():Observable<Object>{
     const code = sessionStorage.getItem('username');
     return this.Getbycode(code);
@@ -60,5 +60,16 @@ export class AuthService {
 
   GetByEmail(emailId: any): Observable<any> {
     return this.http.get(`${this.apiurl}?email=${emailId}`);
+  }
+
+  GetByEmailOrUsername(identifier: any): Observable<any> {
+    const isEmail = identifier.includes('@');
+    let params = new HttpParams();
+    if (isEmail) {
+      params = params.set('email', identifier);
+    } else {
+      params = params.set('username', identifier);
+    }
+    return this.http.get(`${this.apiurl}`, { params });
   }
 }

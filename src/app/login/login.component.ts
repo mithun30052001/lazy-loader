@@ -38,18 +38,20 @@ export class LoginComponent {
 
   proceedlogin(){
       if (this.loginform.valid) {
-
-            this.service.GetByEmail(this.loginform.value.username).subscribe(
-              (res) => {
-                this.userdata = res[0];
-                if(this.userdata){this.checkCredentials(this.userdata);}
-                else{ this.toastr.error("Enter valid user credentials");}
-                console.log(this.userdata);
-              },
-              (error) => {
+          this.service.GetByEmailOrUsername(this.loginform.value.username).subscribe(
+            (res) => {
+              this.userdata = res[0];
+              if (this.userdata) {
+                this.checkCredentials(this.userdata);
+              } else {
                 this.toastr.error("Enter valid user credentials");
               }
-            );
+              console.log(this.userdata);
+            },
+            (error) => {
+              this.toastr.error("Enter valid user credentials");
+            }
+          );
+        }
       }
     }
-}
